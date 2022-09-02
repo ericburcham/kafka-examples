@@ -18,7 +18,7 @@ DATA=$( cat << EOF
     "value.converter": "io.confluent.connect.avro.AvroConverter",
     "value.converter.schema.registry.url": "http://schema-registry:8081",
     "producer.interceptor.classes": "io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor",
-    "max.interval": 1000,
+    "max.interval": 100,
     "tasks.max": "1"
   }
 }

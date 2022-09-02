@@ -425,7 +425,7 @@ check_topic_exists() {
   brokerConn=$2
   topic=$3
 
-  docker-compose exec $containerName kafka-topics --bootstrap-server $brokerConn --describe --topic $topic >/dev/null
+  docker-compose exec -T $containerName kafka-topics --bootstrap-server $brokerConn --describe --topic $topic >/dev/null
   return $?
 }
 

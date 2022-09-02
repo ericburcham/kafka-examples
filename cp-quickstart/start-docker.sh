@@ -28,7 +28,7 @@ retry $MAX_WAIT check_topic_exists broker broker:29092 users || exit 1
 echo "Topics exist!"
 
 # Run the KSQL queries
-docker-compose exec ksqldb-cli bash -c "ksql http://ksqldb-server:8088 <<EOF
+docker-compose exec -T ksqldb-cli bash -c "ksql http://ksqldb-server:8088 <<EOF
 run script '/tmp/statements.sql';
 exit ;
 EOF"
